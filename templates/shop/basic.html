@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+    {%load static %}
+    <link rel="stylesheet" href="{% static 'css/basic.css' %}?{% now 'U' %}">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% block css %}{%endblock %}
+   
+</head>
+<body>
+    
+        <div class="nav">
+            <div class="navbar">
+                <div class="one">
+            <div class="title"><a href="/"><h2>Home Shopping</h2></a></div>
+           
+            <div class="options">
+                <ul> <li><a href="/">Home</a></li></ul>
+                <ul> <li><a href="/category">Category</a></li></ul>
+                <ul> <li><a href="/cart">Cart (<span class="cartvalue">0</span>)</a></li></ul>
+                
+            </div></div>
+
+            <div class="search">
+                
+                <div class="form searchform"><form action="/searchprod" method="POST">
+                    {% csrf_token %}
+                <input type="text" name="searchtext" placeholder="Search Products"> 
+                <button type="submit" class="success searchb">Submit</button>
+            </form>
+
+            {% if user.is_authenticated %} 
+            
+            <p>Welcome {{user}} </p> <a href="/logoutuser"><button class="error">Logout</button></a>
+                {% else %}
+                <a href="/createuser"><button class="primary">Signup</button></a><a href="/loginuser"><button class="success">Login</button></a></div>
+            {% endif %}
+        </div>
+        </div>
+           
+        </div>
+        {% if messages %}
+        {% for message in messages %}
+        
+        <div class="alert {{message.tags}}">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+             <span class="msg ">{{message}}</span> 
+          </div>
+          {% endfor %}
+          {% endif %}
+        {% block body %}{% endblock %}
+    
+</body>
+
+<script>
+    value=document.querySelector(".cartvalue")
+    fetch('http://127.0.0.1:8000/additem', {headers:{'Accept':'application/json','Content-Type':'application/json'}}).then((res)=>res.json()).then((data)=>{
+    value.innerHTML=data})
+   
+</script>{% block script %}
+{% endblock %}
+</html>

@@ -1,0 +1,27 @@
+.confirm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.preview{display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.12rem solid gray;
+    height: 6vh;
+    width: 90vw;
+}
+.detailform{
+    margin-top: 10px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+ .detailform input{
+    width: 70vw;
+    height: 6vh;
+    margin-bottom: 0.43rem;
+}
+.detailform button{margin-top: 0.62rem;
+}

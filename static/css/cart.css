@@ -1,0 +1,51 @@
+.mycart{justify-content: space-around;
+    align-items: center;
+    /* text-align: center; */
+    margin-top: 0.62rem;
+    display: flex;
+    width: 100vw;
+}
+.cart{display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.order{margin-left: 1rem;
+    width: 19rem;
+    height: 8.5rem;
+    border: 0.12rem solid gray;
+    border-radius: 0.24rem;
+}
+.order a{
+    color: black;
+    margin-left: 0.6rem;
+}
+.order .pricep{
+    display: flex;
+}
+.cardbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.order p{
+    margin-top: 0.4rem;
+    font-size: 1rem;
+}
+.order .value{
+    font-size: 1rem;
+}
+.order span button{
+    height: 2rem;
+    width: 0.9rem;
+}
+.choice{
+    margin-top: 1.8rem;
+}
+.hvalue{
+    display: none;}
+.totalamount{
+    margin-top: 0.31rem;
+}
+

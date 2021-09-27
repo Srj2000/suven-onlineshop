@@ -1,0 +1,68 @@
+{% extends 'shop/basic.html'%}
+{% block title%}Category-Home Shopping{% endblock %}
+{% block css%}
+{%load static %}
+    <link rel="stylesheet" href="{% static 'css/cat.css' %}?{% now 'U' %}">
+
+{% endblock %}
+{% block body %}
+<div class="catbody">
+    <div class="category">
+        <h1>Category</h1><hr>
+        <div class="list">
+            <ul><li><a href="/category">All Products</a></li></ul><hr>
+            {% for cat in allcat %}
+           
+
+<ul><li><a href="/category/{{cat}}">{{cat}}</a></li></ul><hr>
+
+{% endfor %}
+</div>
+    </div>
+
+    <div class="product">
+
+        <ul><li><h2>{{category}}</h2></li></ul> 
+    
+        <div class="cardbody">
+           
+            <div class="cards">
+                {% for all in allprod %}
+    <div class="card">
+        <div class="imgcard"><img src="/media/{{all.image}}" alt=""></div>
+        <div class="body">
+            <p>{{all.p_name}}</p>
+        
+        <p> Rs {{all.price}}</p>
+            <div class="btns"><button class="add success" id="{{all.id}}">Add To Cart</button><a href="/viewprod/{{all.id}}/{{all.category}}"><button class="primary">Quick View</button></a></div>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 and forloop.counter > 0 %}
+    </div> <div class="cards">
+    {% endif %}
+    
+   {% endfor %}
+
+   
+    
+    </div>
+    </div>
+
+    </div>
+</div>
+<center>
+    {% if allprod.has_previous %}
+    <a href="?page={{allprod.previous_page_number}}"><button class="primary" type="submit"> << Previous</button></div></a>
+    {% endif %}
+    {% if allprod.has_next %}
+    <a href="?page={{allprod.next_page_number}}"><button class="primary" type="submit">Next >></button></div></a>
+    {% endif %}
+    </center>
+
+    {%endblock %}
+    {% block script%}
+
+    {% load static %}
+<script src="{% static 'js/home.js' %}"></script>
+
+    {% endblock %}

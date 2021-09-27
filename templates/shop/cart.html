@@ -1,0 +1,45 @@
+{% extends 'shop/basic.html'%}
+{% block title %}Cart-Home Shopping{% endblock %}
+{% block css %}
+{%load static %}
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}?{% now 'U' %}">
+
+{% endblock %}
+{% block body %}
+<div class="cart">
+    <h1>Your Cart</h1>
+   {% if not allprod %}
+   <h1 class="noitem">You Have No Items In Your Cart</h1>
+   {%else%}
+    <div class="mycart">
+        {% for prod,qty in allprod.items %}
+       <div class="order">
+           <p>{{prod.p_name}}</p>
+           <div class="pricep"><p>Rs</p><p id="price{{prod.id}}" class="price">{% widthratio prod.price 1 qty.0 %}</p></div>
+           
+           <div class="cartdbtn">
+           <a href="/viewprod/{{prod.id}}/{{prod.category}}"><button class="primary">QuickView</button></a>
+           <a href="/managecookie/{{prod.id}}"><button class="danger">Delete</button></a>
+            <span class="add " id="add{{prod.id}}"><button class="success">+</button></span><span class="value" id="value{{prod.id}}">{{qty.0}}</span><span class="sub " id="sub{{prod.id}}"><button class="danger">-</button></span></div>
+       </div>
+       {% if forloop.counter|divisibleby:3 and forloop.counter > 0 %}
+       </div><div class="mycart">
+           {% endif %}
+{% endfor %}
+
+       
+    </div>  
+    <div class="totalamount"><h3>Your Total Amount Is:Rs <span class="amountvalue">{{amount}}</span></h3></div>
+      <div class="choice"><a href="/bookorder"><button class="success">Checkout</button></a>
+    <a href="/managecookie/clearall"><button class="danger">Clear All</button></a></div>
+    {%endif %}
+</div>
+{% endblock %}
+{% block script%}
+{% load static %}
+<script src="{% static 'js/cart.js' %}"></script>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'shop/basic.html'%}
+{%load static %}
+{% block title %}Home Shopping{% endblock %}
+{% block css %}
+<style>
+    .large{font-size: 6rem;}
+</style>
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}?{% now 'U' %}">
+
+{% endblock %}
+{% block body %}
+<div class="mainbody">
+    
+       {% for cat, prod in all.items %}
+        
+    <div class="cardbody">
+        <div class="category"><h1>{{cat}}</h1></div>
+        
+        <div class="cards">
+            {% for p in prod %}
+            {% if forloop.counter < 4 %}
+<div class="card">
+    <div class="img"><img src="/media/{{p.image}}" alt=""></div>
+    <div class="body">
+        <p>{{p.p_name}} </p>
+        
+        <p> Rs {{p.price}}</p>
+        <div class="btns"><button class="add success" id="{{p.id}}">Add To Cart</button> <a href="/viewprod/{{p.id}}/{{p.category}}"><button class="primary">Quick View</button></a></div>
+    </div>
+</div>{% endif %}
+{% if forloop.counter > 3 %}
+<a href="/category/{{p.category}}"><div class="seemore "> <img src="{% static 'images/arrow.svg' %}" alt="" width="60vw"><h3>see more</h3></div></a> {% endif  %}
+{% endfor %}
+
+
+
+
+</div>
+
+</div>
+{% endfor %}
+
+  
+</div>
+{% endblock %}
+{% block script%}
+
+{% load static %}
+<script src="{% static 'js/home.js' %}"></script>
+
+
+
+{% endblock %}

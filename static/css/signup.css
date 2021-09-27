@@ -1,0 +1,13 @@
+.signuphere {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signupform input{
+    width: 70vw;
+    height: 6vh;
+    margin-bottom: 0.43rem;
+}
+.signupform button{margin-top: 0.62rem;
+}

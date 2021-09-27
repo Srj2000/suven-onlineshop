@@ -1,0 +1,28 @@
+{% extends 'shop/basic.html'%}
+{% block title %}Signup-Home Shopping{% endblock %}
+{% block css %}
+{%load static %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+{% endblock %}
+    {% block body %}
+    <div class="signuphere">
+        <h1>Sign Up Here</h1>
+        
+
+        <div class="signupform">
+            <form action="/createuser" method="POST">
+                {% csrf_token %}
+                {% for f in form %}
+                {{f.label}} <br>
+                {{f}} <br>
+                {% endfor %}
+        <button type="submit" class="success">Signup</button>
+            </form>
+        </div>
+
+    
+    {% endblock %}
+
+        {% block script %}
+        {% endblock %}

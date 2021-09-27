@@ -1,0 +1,67 @@
+{% extends 'shop/basic.html'%}
+{% block title%}Productname-Home Shopping{% endblock %}
+{% block css%}
+{%load static %}
+    <link rel="stylesheet" href="{% static 'css/view.css' %}?{% now 'U' %}">
+
+{% endblock %}
+{% block body %}
+<div class="main">
+<div class="viewbody">
+    <div class="img"><img src="/media/{{product.image}}" alt=""></div>
+    <div class="content">
+    
+        <span class="head">{{product.p_name}}</span>
+<p>{{product.desc}}</p>
+<p>Rs {{product.price}}</p>
+<button type="submit" class="add success" id="{{product.id}}">Add To Cart</button></div>
+</div>
+
+
+{% if similar %}
+    <div class="cardbody">
+        <ul><li><h1>Similar Products</h1></li></ul> 
+        <div class="cards">
+           
+            
+            {%for s in similar %}
+<div class="card">
+    <div class="imgcard"><img src="/media/{{s.image}}" alt=""></div>
+    <div class="body">
+        <p>{{s.p_name}}</p>
+        
+        <p>Rs {{s.price}}</p>
+        <div class="btns"><button class="add success" id="{{s.id}}">Add To Cart</button> <a href="/viewprod/{{s.id}}/{{s.category}}"><button class="primary">Quick View</button></a></div>
+    </div>
+    {% if forloop.counter|divisibleby:4 and forloop.counter > 0 %}
+    </div> <div class="cards">
+    {% endif %}
+</div>{% endfor %}
+ 
+
+</div></div>
+
+    
+    </div>
+
+
+
+
+
+
+
+
+             
+    {% endif %}
+
+
+
+
+</div>
+
+
+
+    {%endblock %}
+    {% block script%}
+    <script src="{% static 'js/home.js' %}"></script>
+    {% endblock %}

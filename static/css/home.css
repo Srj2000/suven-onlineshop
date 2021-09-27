@@ -1,0 +1,59 @@
+.cardbody{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.62rem;
+    margin-left: 5vw;
+  
+}
+.cards{
+    display: flex;
+    
+  align-items: center;
+}
+.card{
+    border: 0.12rem solid gray;
+    height: 20rem;
+    width: 13rem;
+    margin-left: 0.56rem;
+    border-radius: 0.5rem;
+    
+}
+.img{
+    /*  */
+    height: 12rem;
+    width: 11rem;
+    margin-left: 0.12rem;
+    border-radius: 0.18rem;
+}
+.img img{
+    height: 11rem;
+    width: 9rem;
+
+}
+.body p{
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    
+}
+
+.btns button{
+    width: 5rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+}
+.btns{
+    text-align: center;
+}
+.mainbody{margin-top: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-itpxs: center; */
+}
+.sepxore{display: flex;
+    flex-direction: column;
+    
+    margin-left: 0.5rem;}
+.sepxore h3{
+    color: black;
+}

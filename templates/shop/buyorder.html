@@ -1,0 +1,31 @@
+{% extends 'shop/basic.html'%}
+{% block title %}Confirm Order-Home Shopping{% endblock %}
+{% block css %}
+{%load static %}
+    <link rel="stylesheet" href="{% static 'css/buyorder.css' %}">
+
+{% endblock %}
+    {% block body %}
+    <div class="confirm">
+        <h1>Your Address</h1>
+        <div class="preview">
+<ul><li>(Cash In Delivery)Your Total Price:</li></ul>
+<ul><li><strong>Rs {{amount}}</strong></li></ul>
+        </div>
+
+        <div class="detailform">
+            <form action="/bookorder" method="POST">
+                {% csrf_token %}
+                {% for f in form %}
+                {{f.label}} <br>
+                {{f}} <br>
+                {% endfor %}
+        <button type="submit" class="success">Order</button>
+            </form>
+        </div>
+
+    </div>
+    {% endblock %}
+
+        {% block script %}
+        {% endblock %}

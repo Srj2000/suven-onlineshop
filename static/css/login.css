@@ -1,0 +1,13 @@
+.loginhere {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loginform input{
+    width: 70vw;
+    height: 6vh;
+    margin-bottom: 0.43rem;
+}
+.loginform button{margin-top: 0.62rem;
+}

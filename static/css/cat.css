@@ -1,0 +1,70 @@
+.catbody{
+    width: 100vw;
+    display: flex;
+    
+}
+.category{
+    width: 12vw;
+    height: 100vh;
+    border: 0.12rem solid gray;
+    border-radius: 0.12rem
+}
+.list a{
+    color: black;
+}
+.list{
+    text-align: center;
+}
+.list  ul{
+    margin-top: 0.75rem;
+}
+.body p{
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    
+}
+.imgcard img{
+    height: 11rem;
+    width: 9rem;
+
+}
+.product{
+width: 88vw;
+display: flex;
+flex-direction: column;
+/* justify-content: center; */
+align-items: center;
+}
+.imgcard{
+   
+    border-radius: 0.18rem;
+    height: 12rem;
+    width: 11rem;
+    margin-left: 0.12rem;
+}
+.card{display: flex;
+    flex-direction: column;
+    border: 0.12rem solid gray;
+    border-radius: 0.5rem;
+    height: 20rem;
+    width: 13rem;
+    margin-left:1.25rem;
+    
+}
+/* .cardbody{
+    display: flex;
+    flex-direction: column;
+} */
+.cards{
+    margin-top: 0.62rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 84vw;
+}
+.btns button{
+    width: 5rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+    margin-left: 0.2rem;
+}

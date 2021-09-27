@@ -1,0 +1,92 @@
+.viewbody{
+    display: flex;
+    height: 40vh;
+    width: 90vw;
+    margin-top: 0.62rem;
+}
+/* .img{
+    height: 12rem;
+    width: 11rem;
+    border: 0.12rem solid gray;
+} */
+.img img{
+    height: 14rem;
+    width: 10rem;
+
+}
+.desc{
+    display: flex;
+    flex-direction: column;
+}
+.main{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btns button, .content button{
+    width: 5rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+}
+.content
+{
+    margin-left: 0.562rem;
+}
+ul{
+    margin-top: 0.37rem;
+}
+.imgcard{
+    
+    height: 12rem;
+    width: 11rem;
+    margin-left: 0.12rem;
+}
+.imgcard img{
+    height: 11rem;
+    width: 9rem;
+
+}
+.card{
+    border: 0.12rem solid gray;
+    height: 20rem;
+    width: 13rem;
+    /* margin-left: 1.2rem; */
+    
+}
+.body p{
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    
+}
+.cardbody{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    /* justify-content: space-around;
+    align-items: center; */
+}
+.cardbody ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cards{
+    margin-top: 0.62rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.viewaddcart button{
+    width: 5rem;
+    height: 2rem;
+}
+.content p{
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+.head{
+    font-size:1.4rem ;
+}
