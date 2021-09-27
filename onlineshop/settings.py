@@ -127,10 +127,8 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# SESSION_ENGINE = "django.contrib.sessions.backends.file"
-# SESSION_FILE_PATH = os.path.join(BASE_DIR, "session")
 STATIC_DIR=os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS=[STATIC_DIR]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-# STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
